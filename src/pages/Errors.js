@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
+import Hero from "../components/Hero";
 
-class Errors extends Component {
-    render() {
-        return (
-            <div>
-               <h1>Error page</h1>
-            </div>
-        );
-    }
+function Errors(props) {
+  return (
+    <div>
+      <Hero>
+        <Banner title="404">
+          <Link to="/" className="btn-primary">
+            return home
+          </Link>
+        </Banner>
+      </Hero>
+    </div>
+  );
 }
 
 export default Errors;
