@@ -9,7 +9,7 @@ function Home(props) {
     <>
       <Hero>
         <Banner title="luxurius rooms" subtitle="delux rooms starting at $299">
-          <Link to="resort/rooms" className="btn-primary">
+          <Link to="/resort/rooms" className="btn-primary">
             our rooms
           </Link>
         </Banner>
