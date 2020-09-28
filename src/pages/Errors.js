@@ -8,7 +8,7 @@ function Errors(props) {
     <div>
       <Hero>
         <Banner title="404">
-          <Link to="/" className="btn-primary">
+          <Link to="/resort" className="btn-primary">
             return home
           </Link>
         </Banner>
