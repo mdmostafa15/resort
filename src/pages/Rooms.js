@@ -8,7 +8,7 @@ function Rooms(props) {
     <div>
       <Hero hero="roomsHero">
         <Banner title="our rooms">
-          <Link to="/" className="btn-primary">
+          <Link to="/resort" className="btn-primary">
             return home
           </Link>
         </Banner>

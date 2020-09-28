@@ -16,7 +16,7 @@ class Navbar extends Component {
       <nav className="navbar">
         <nav className="nav-center">
           <nav className="nav-header">
-            <Link to="/">
+            <Link to="/resort">
               <img src={logo} alt="Beach Resort" />
             </Link>
             <button type="button" className='nav-btn'
@@ -25,8 +25,8 @@ class Navbar extends Component {
             </button>
           </nav>
           <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
-              <li><Link to='/' >Home</Link></li>
-              <li><Link to='rooms'>Rooms</Link></li>
+              <li><Link to='/resort' >Home</Link></li>
+              <li><Link to='resort/rooms'>Rooms</Link></li>
           </ul>
         </nav>
       </nav>
