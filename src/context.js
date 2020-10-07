@@ -7,7 +7,7 @@ class RoomProvider extends Component {
   state = {
     rooms: [],
     featuredRooms: [],
-    storedRooms: [],
+    sortedRooms: [],
     loading: true,
   };
 
@@ -19,7 +19,7 @@ class RoomProvider extends Component {
     this.setState({
       rooms,
       featuredRooms,
-      storedRooms: rooms,
+      sortedRooms: rooms,
       loading: false,
     });
   }
@@ -36,11 +36,11 @@ class RoomProvider extends Component {
     return tempRooms;
   }
   // get a specific room
-  getRoom=(slug)=> {
+  getRoom = (slug) => {
     let tempRoom = [...this.state.rooms];
     const singleRoom = tempRoom.find((room) => room.slug === slug);
     return singleRoom;
-  }
+  };
   render() {
     return (
       <RoomContext.Provider
@@ -56,5 +56,15 @@ class RoomProvider extends Component {
 }
 
 const RoomConsumer = RoomContext.Consumer;
+
+export function withRoomConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <RoomConsumer>
+        {(value) => <Component {...props} context={value} />}
+      </RoomConsumer>
+    );
+  };
+}
 
 export { RoomProvider, RoomContext, RoomConsumer };
