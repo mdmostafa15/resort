@@ -13,7 +13,7 @@ console.log("rooms containers",rooms);
   }
   return (
     <>
-      <RoomFilter sortedRooms={sortedRooms}/>
+      <RoomFilter rooms={rooms}/>
       <RoomList rooms={sortedRooms}/>
     </>
   );
