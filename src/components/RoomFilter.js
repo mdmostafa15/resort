@@ -72,6 +72,22 @@ function RoomFilter({ rooms }) {
           </select>
         </div>
         {/** end guests type search */}
+
+        {/** price filter search */}
+        <div className="form-group">
+          <label htmlFor="price">room price: {price}</label>
+          <input
+            type="range"
+            className="form-control"
+            id="price"
+            name="price"
+            min={minPrice}
+            max={maxPrice}
+            value={price}
+            onChange={handleChange}
+          />
+        </div>
+        {/** end price filter search */}
       </div>
     </section>
   );
