@@ -88,6 +88,55 @@ function RoomFilter({ rooms }) {
           />
         </div>
         {/** end price filter search */}
+
+        {/** size filter search */}
+        <div className="form-group">
+          <label htmlFor="size">room size</label>
+          <div className="size-inputs">
+            <input
+              type="number"
+              className="form-control"
+              id="size"
+              name="minSize"
+              value={minSize}
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              className="form-control"
+              id="size"
+              name="maxSize"
+              value={maxSize}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        {/** end size filter search */}
+
+        {/** extrs filter search */}
+        <div className="form-group">
+          <div className="single-extra">
+            <input
+              type="checkbox"
+              id="breakfast"
+              name="breakfast"
+              checked={breakfast}
+              onChange={handleChange}
+            />
+          <label htmlFor="breakfast">breakfast</label>
+          </div>
+          <div className="single-extra">
+            <input
+              type="checkbox"
+              id="pets"
+              name="pets"
+              checked={pets}
+              onChange={handleChange}
+            />
+          <label htmlFor="pets">pets</label>
+          </div>
+        </div>
+        {/** end extras filter search */}
       </div>
     </section>
   );
