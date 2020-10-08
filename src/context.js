@@ -20,7 +20,6 @@ class RoomProvider extends Component {
     maxSize: 0,
     breakfast: false,
     pets: false,
-    value: "all",
   };
 
   //get data
@@ -65,13 +64,10 @@ class RoomProvider extends Component {
   handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    const type = value;
-    console.log("from handlechange: ", type, name, value);
+    console.log("from handlechange: ", name, value);
     this.setState(
       {
-        type,
-        name,
-        value,
+        [name]: value,
       },
       this.filterRooms
     );
@@ -79,10 +75,30 @@ class RoomProvider extends Component {
 
   filterRooms = () => {
     // console.log("hello from filterRooms!");
-    let { rooms, type, capacity, pirce, minSize, maxSize, breakfast, pets } = this.state;
+    let {
+      rooms,
+      type,
+      capacity,
+      pirce,
+      minSize,
+      maxSize,
+      breakfast,
+      pets,
+    } = this.state;
+
+    // all rooms
     let tempRoom = [...rooms];
+    // value transform
+    capacity = parseInt(capacity);
+
+    // filter by type
     if (type !== "all") {
       tempRoom = tempRoom.filter((item) => item.type === type);
+    }
+
+    // filter by capacity
+    if (capacity !== "all") {
+      tempRoom = tempRoom.filter((item) => item.capacity >= capacity);
     }
     this.setState({
       sortedRooms: tempRoom,

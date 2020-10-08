@@ -25,8 +25,12 @@ function RoomFilter({ rooms }) {
 
   // get uniqe value of type
   let types = getUniqeVal(rooms, "type");
-  // set all as a type
+  // set 'all' as a type
   types = ["all", ...types];
+  // get uniqe number of capacity
+  let capacities = getUniqeVal(rooms, "capacity");
+  // // set 'all' as a type
+  // types = ["all", ...types];
   return (
     <section className="filter-container">
       <Title title="search rooms" />
@@ -37,7 +41,7 @@ function RoomFilter({ rooms }) {
           <select
             className="form-control"
             id="type"
-            value={value}
+            value={type}
             name="type"
             onChange={handleChange}
           >
@@ -49,6 +53,25 @@ function RoomFilter({ rooms }) {
           </select>
         </div>
         {/** end select type search */}
+
+        {/** guests type search */}
+        <div className="form-group">
+          <label htmlFor="capacity">Guests</label>
+          <select
+            className="form-control"
+            id="capacity"
+            value={capacity}
+            name="capacity"
+            onChange={handleChange}
+          >
+            {capacities.map((item, index) => (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+        {/** end guests type search */}
       </div>
     </section>
   );
