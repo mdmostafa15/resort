@@ -61,9 +61,11 @@ class RoomProvider extends Component {
     return singleRoom;
   };
 
+  // event hendle function of filter forms
   handleChange = (e) => {
     const name = e.target.name;
-    const value = e.target.type==="checkbox"? e.target.checked : e.target.value;
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
     console.log("from handlechange: ", name, value);
     this.setState(
       {
@@ -106,7 +108,9 @@ class RoomProvider extends Component {
     tempRoom = tempRoom.filter((item) => item.price <= price);
 
     // filter by size
-    tempRoom = tempRoom.filter((item) => item.size >= minSize && item.size <= maxSize);
+    tempRoom = tempRoom.filter(
+      (item) => item.size >= minSize && item.size <= maxSize
+    );
 
     // filter by extras
     if (breakfast) {
@@ -136,7 +140,7 @@ class RoomProvider extends Component {
     );
   }
 }
-
+//consumer
 const RoomConsumer = RoomContext.Consumer;
 
 export function withRoomConsumer(Component) {

@@ -2,8 +2,11 @@ import Title from "./Title";
 import React, { Component } from "react";
 import { FaCoffee, FaHiking, FaShuttleVan } from "react-icons/fa";
 import { GiBarbecue } from "react-icons/gi";
-
+/**
+ * service section class
+ */
 class Services extends Component {
+  // define state
   state = {
     services: [
       {
@@ -32,10 +35,10 @@ class Services extends Component {
       },
     ],
   };
-
   render() {
     return (
       <section className="services">
+        {/* add title component */}
         <Title title="Services" />
         <div className="services-center">
           {this.state.services.map((item, index) => {

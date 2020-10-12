@@ -3,10 +3,13 @@ import { RoomContext } from "../context";
 import Loading from "./Loading";
 import Room from "./Room";
 import Title from "./Title";
-
+/**
+ * class component of feature section
+ */
 class Featured extends Component {
   static contextType = RoomContext;
   render() {
+    //destructuring
     let { loading, featuredRooms: rooms } = this.context;
     console.log(rooms);
     rooms = rooms.map((room) => {

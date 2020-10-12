@@ -5,6 +5,9 @@ import defaultBgImg from "../images/room-1.jpeg";
 import Banner from "../components/Banner";
 import StyleSingleRoomHero from "../components/StyleSingleRoomHero";
 
+/**
+ * singleRoom page class
+ */
 class SingleRoomPage extends Component {
   constructor(props) {
     super(props);
@@ -44,10 +47,12 @@ class SingleRoomPage extends Component {
       extras,
       images,
     } = room;
+    // destructuring images
     const [heroImg, ...restOfImages] = images;
     console.log("rest of images", restOfImages);
     return (
       <>
+        {/* banner section */}
         <StyleSingleRoomHero img={heroImg || defaultBgImg}>
           <Banner title={`${name} room`}>
             <Link to="/resort/rooms" className="btn btn-primary">
@@ -55,12 +60,14 @@ class SingleRoomPage extends Component {
             </Link>
           </Banner>
         </StyleSingleRoomHero>
+        {/* room images  */}
         <section className="single-room">
           <div className="single-room-images">
             {restOfImages.map((item, index) => {
               return <img key={index} src={item} alt={name} />;
             })}
           </div>
+          {/* info section */}
           <div className="single-room-info">
             <article className="desc">
               <h3>details</h3>
@@ -79,6 +86,7 @@ class SingleRoomPage extends Component {
             </article>
           </div>
         </section>
+        {/* extra facilities */}
         <section className="room-extras">
           <h6>extras</h6>
           <ul className="extras">

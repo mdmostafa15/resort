@@ -2,9 +2,19 @@ import React, { useContext } from "react";
 import { RoomContext } from "../context";
 import Title from "./Title";
 
+/**
+ * get unique value
+ * @param {*} items
+ * @param {*} value
+ */
 const getUniqeVal = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
+
+/**
+ *
+ * @param {*} param0
+ */
 function RoomFilter({ rooms }) {
   const context = useContext(RoomContext);
   console.log("from RoomFilter: ", context);
@@ -15,22 +25,19 @@ function RoomFilter({ rooms }) {
     price,
     minPrice,
     maxPrice,
-    size,
     minSize,
     maxSize,
     breakfast,
     pets,
-    value,
   } = context;
 
   // get uniqe value of type
   let types = getUniqeVal(rooms, "type");
-  // set 'all' as a type
   types = ["all", ...types];
+
   // get uniqe number of capacity
   let capacities = getUniqeVal(rooms, "capacity");
-  // // set 'all' as a type
-  // types = ["all", ...types];
+
   return (
     <section className="filter-container">
       <Title title="search rooms" />
@@ -95,7 +102,7 @@ function RoomFilter({ rooms }) {
           <div className="size-inputs">
             <input
               type="number"
-              className="form-control"
+              className="size-input"
               id="size"
               name="minSize"
               value={minSize}
@@ -103,7 +110,7 @@ function RoomFilter({ rooms }) {
             />
             <input
               type="number"
-              className="form-control"
+              className="size-input"
               id="size"
               name="maxSize"
               value={maxSize}
@@ -123,7 +130,7 @@ function RoomFilter({ rooms }) {
               checked={breakfast}
               onChange={handleChange}
             />
-          <label htmlFor="breakfast">breakfast</label>
+            <label htmlFor="breakfast">breakfast</label>
           </div>
           <div className="single-extra">
             <input
@@ -133,7 +140,7 @@ function RoomFilter({ rooms }) {
               checked={pets}
               onChange={handleChange}
             />
-          <label htmlFor="pets">pets</label>
+            <label htmlFor="pets">pets</label>
           </div>
         </div>
         {/** end extras filter search */}

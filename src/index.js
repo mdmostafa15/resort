@@ -6,6 +6,10 @@ import App from "./App";
 import { RoomProvider } from "./context";
 import * as serviceWorker from "./serviceWorker";
 
+/**
+ * added context provider and
+ * router
+ */
 ReactDOM.render(
   <RoomProvider>
     <Router>

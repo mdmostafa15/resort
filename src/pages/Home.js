@@ -5,7 +5,10 @@ import Featured from "../components/Featured";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 
-function Home(props) {
+/**
+ * home page
+ */
+function Home() {
   return (
     <>
       <Hero>
@@ -15,8 +18,8 @@ function Home(props) {
           </Link>
         </Banner>
       </Hero>
-      <Services/>
-      <Featured/>
+      <Services />
+      <Featured />
     </>
   );
 }

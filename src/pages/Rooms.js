@@ -4,7 +4,10 @@ import Banner from "../components/Banner";
 import Hero from "../components/Hero";
 import RoomsContainer from "../components/RoomsContainer";
 
-function Rooms(props) {
+/**
+ * rooms page
+ */
+function Rooms() {
   return (
     <>
       <Hero hero="roomsHero">
@@ -15,7 +18,7 @@ function Rooms(props) {
         </Banner>
       </Hero>
       <section>
-      <RoomsContainer/>
+        <RoomsContainer />
       </section>
     </>
   );

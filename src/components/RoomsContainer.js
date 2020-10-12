@@ -4,17 +4,22 @@ import RoomFilter from "./RoomFilter";
 import RoomList from "./RoomList";
 import Loading from "./Loading";
 import { withRoomConsumer } from "../context";
-
+/**
+ * rooms page container
+ * contain filer component and list component of room
+ * @param {*} param0
+ */
 function RoomsContainer({ context }) {
+  // destructured context value
   const { loading, sortedRooms, rooms } = context;
-console.log("rooms containers",rooms);
+  console.log("rooms containers", rooms);
   if (loading) {
     return <Loading />;
   }
   return (
     <>
-      <RoomFilter rooms={rooms}/>
-      <RoomList rooms={sortedRooms}/>
+      <RoomFilter rooms={rooms} />
+      <RoomList rooms={sortedRooms} />
     </>
   );
 }

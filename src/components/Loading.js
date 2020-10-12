@@ -1,7 +1,10 @@
 import React from "react";
 import lodingArrowGif from "../images/gif/loading-arrow.gif";
 
-function Loding(pops) {
+/**
+ * loading component
+ */
+function Loding() {
   return (
     <div className="loading">
       <h4>rooms data loading</h4>

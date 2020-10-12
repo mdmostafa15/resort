@@ -1,5 +1,8 @@
 import React from "react";
-
+/**
+ * Background image of banner section of pages
+ * @param {*} param0
+ */
 function Banner({ children, title, subtitle }) {
   return (
     <div className="banner">
